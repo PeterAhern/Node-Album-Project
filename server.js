@@ -39,7 +39,9 @@ let nextId = 13;
 app.use(express.json()); // before our routes definition
 
 app.get("/", (req, res) => {
-  res.send(albumsData);
+  res.send(
+    "Welcome to the archive of all Beyoncé Albums, use: /albums to see her catalogue, or use: /albumId to see a specific album "
+  );
 });
 
 app.get("/albums", (req, res) => {
@@ -139,7 +141,7 @@ app.put("/albums/:albumId", (req, res) => {
   // });
 });
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Listening on Port: ${PORT}`);
